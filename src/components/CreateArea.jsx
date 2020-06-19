@@ -5,12 +5,23 @@ function CreateArea() {
         title: '',
         content: ''
     })
+    function handleChange(e) {
+        e.preventDefault()
 
+        const {name, value} = e.target;
+
+        setNote(prevNote => {
+            return {
+                ...prevNote,
+                [name]: value
+            }
+        })
+    }
     return (
         <div>
-            <form action="">
-                <input name="title"  values={note.title}  placeholder="title" />
-                <textarea  name="content"  values={note.content}  placeholder="Make a note" rows="3"/>
+            <form className="create-note">
+                <input name="title"  onChange={handleChange} values={note.title}  placeholder="title" />
+                <textarea  name="content"  onChange={handleChange} values={note.content}  placeholder="Make a note" rows="3"/>
                 <button>Add</button>
             </form>
         </div>
