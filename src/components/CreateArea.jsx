@@ -1,30 +1,32 @@
-import React, {useState} from 'react';
+import React from "react";
+import { useState } from "react";
 
 function CreateArea() {
-    const [note, setNote] = useState({
-        title: '',
-        content: ''
+    // Use hooks to setup component state
+   const [note, setNote] = useState({
+        title: "",
+        content: ""
+   });
+   function hadnleChange(e){
+    //First, destructure the event object
+    const {name, value} = e.target;
+
+    setNote(prevNote => {
+        return {
+            ...prevNote,
+            [name]: value
+        }
     })
-    function handleChange(e) {
-        e.preventDefault()
-
-        const {name, value} = e.target;
-
-        setNote(prevNote => {
-            return {
-                ...prevNote,
-                [name]: value
-            }
-        })
-    }
+   }
     return (
         <div>
-            <form className="create-note">
-                <input name="title"  onChange={handleChange} values={note.title}  placeholder="title" />
-                <textarea  name="content"  onChange={handleChange} values={note.content}  placeholder="Make a note" rows="3"/>
+            <form>
+                <input name="title" onChange={hadnleChange}value={note.title} placeholder="Title" />
+                <textarea name="content" onChange={hadnleChange}value={note.content} placeholder="Take a note..." rows="3" />
                 <button>Add</button>
             </form>
         </div>
-    )
+    );
 }
-export default CreateArea
+
+export default CreateArea;
