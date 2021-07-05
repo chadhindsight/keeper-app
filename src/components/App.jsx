@@ -6,7 +6,7 @@ import Footer from './Footer.jsx';
 
 class App extends Component {
     state = {
-        notes: [{title: 'dummy', content: 'bummy'}]
+        notes: [{company: 'dummy', content: 'bummy'}]
     }
 
     // Add a new note to state. Pass down through props
@@ -16,7 +16,7 @@ class App extends Component {
         })
         console.log(this.state)
     }
-    // Remove a specified note. Pass down through props
+    // Remove a specified note! Pass down through props
     deleteNote = (id) =>{
         this.setState({
             notes: this.state.notes.filter((noteItem, index) => {
@@ -31,6 +31,7 @@ class App extends Component {
                 <Header />
                 <CreateArea
                 onAdd={this.addNote} />
+
                 {this.state.notes.map((noteItem, index)=>{
                     return <Note
                      key={index}
