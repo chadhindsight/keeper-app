@@ -16,7 +16,7 @@ class App extends Component {
         })
         console.log(this.state)
     }
-    // Remove a specified note! Pass down through props.
+    // Remove a specified note! Pass this method down through props
     deleteNote = (id) => {
         this.setState({
             notes: this.state.notes.filter((noteItem, index) => {
