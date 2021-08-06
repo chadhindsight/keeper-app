@@ -7,7 +7,7 @@ function CreateArea(props) {
     title: "",
     content: "",
   });
-  function hadnleChange(e) {
+  function handleChange(e) {
     //First, destructure the event object
     const { name, value } = e.target;
 
@@ -33,13 +33,13 @@ function CreateArea(props) {
       <form>
         <input
           name="title"
-          onChange={hadnleChange}
+          onChange={handleChange}
           value={note.title}
           placeholder="Title"
         />
         <textarea
           name="content"
-          onChange={hadnleChange}
+          onChange={handleChange}
           value={note.content}
           placeholder="Take a note..."
           rows="3"
