@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 function CreateArea(props) {
-  // Use hooks to setup component state
+  // Use hooks to setup component state.
   const [note, setNote] = useState({
     title: "",
     content: "",
