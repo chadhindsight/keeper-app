@@ -18,7 +18,7 @@ function CreateArea(props) {
       };
     });
   }
-
+// on submit
   function submitNote(e) {
     e.preventDefault();
     props.onAdd(note);
