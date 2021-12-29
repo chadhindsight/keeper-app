@@ -12,6 +12,7 @@ function CreateArea(props) {
     const { name, value } = e.target;
 
     setNote((prevNote) => {
+      console.log(note)
       return {
         ...prevNote,
         [name]: value,
