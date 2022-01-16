@@ -8,7 +8,7 @@ function CreateArea(props) {
     content: "",
   });
   function handleChange(e) {
-    //First, destructure the event object to get the values you want.
+    //First, destructure the event object to get the values you want
     const { name, value } = e.target;
 
     setNote((prevNote) => {
