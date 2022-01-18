@@ -2,7 +2,7 @@ import React from "react";
 
 function Note(props) {
     // Get access to the id from <Note /> and specify that the note with
-    // that id is to be deleted
+    // that id should be be deleted
     function handleClick() {
         props.onDelete(props.id)
     }
